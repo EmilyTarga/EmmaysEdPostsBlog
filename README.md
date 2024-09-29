@@ -17,23 +17,23 @@ O **EmmaysEdPostsBlog** é um blog desenvolvido com **Next.js** para professores
 
 ### 1. Autenticação
 
-O sistema utiliza **NextAuth** com o provedor **Credentials** para autenticação de usuários, o que significa que os professores e alunos devem utilizar um e-mail e senha para fazer login. Não há suporte para provedores externos como Google ou Facebook.
+O sistema utiliza **NextAuth** com o provedor **Credentials** para autenticação de usuários, o que significa que os professores e alunos devem utilizar um e-mail e senha para fazer login.
 
 ### 2. Criação e Edição de Posts
 
-Apenas professores têm permissão para criar e editar posts. As funcionalidades de criação e edição incluem:
+Professores têm permissão para criar e editar posts. As funcionalidades de criação e edição incluem:
 
 - Título do post
-- Conteúdo em formato de texto simples ou Markdown
-- Não é permitido o upload de imagens
+- Conteúdo
+- Autor
+- Assunto
 
 ### 3. Painel de Controle (Admin)
 
 Professores com permissões administrativas têm acesso a um painel onde podem gerenciar os posts e usuários do blog. As funcionalidades do painel incluem:
 
-- Remover postagens inapropriadas
-- Gerenciar perfis de alunos e professores
-- Conceder ou revogar permissões de administrador
+- Deletar postagens
+- Editar postagens
 
 ## Principais Desafios Durante o Desenvolvimento
 
@@ -41,11 +41,11 @@ Durante o desenvolvimento do **EmmaysEdPostsBlog**, alguns desafios significativ
 
 ### 1. Integração entre Next.js e NestJS
 
-A integração entre **Next.js** (para o frontend) e **NestJS** (para a API backend) apresentou desafios técnicos, principalmente na sincronia entre os métodos de chamada de API. Foi necessário definir uma arquitetura clara para o roteamento entre os dois frameworks, garantindo que a troca de dados entre o cliente e o servidor fosse eficiente e segura.
+A integração entre **Next.js** (para o frontend) e **NestJS** (para a API backend) apresentou desafios técnicos. Foi necessário definir uma arquitetura clara para o roteamento entre os dois frameworks, garantindo que a troca de dados entre o cliente e o servidor fosse eficiente e segura.
 
 ### 2. Autenticação com NextAuth usando Credentials
 
-Implementar a autenticação com **NextAuth** utilizando apenas o provedor de **Credentials** foi um desafio, pois diferentemente de integrações com provedores externos (Google, Facebook), foi necessário implementar a segurança do gerenciamento de senhas e tokens. Garantir que o armazenamento seguro de senhas e a troca de tokens estivesse dentro das boas práticas foi crucial para evitar vulnerabilidades.
+Implementar a autenticação com **NextAuth** utilizando apenas o provedor de **Credentials** foi um desafio, foi necessário implementar a segurança do gerenciamento de senhas e tokens. Garantir que o armazenamento seguro de senhas e a troca de tokens estivesse dentro das boas práticas foi crucial para evitar vulnerabilidades.
 
 ### 3. Permissões de Usuários
 
